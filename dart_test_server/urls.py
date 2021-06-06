@@ -22,9 +22,9 @@ from subapp.models import Brand
 from subapp import urls as subappurls
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    # path("", include(django_client_framework.api.urls)),
-    # path('subapp/', include(subappurls))
+    path('admin/', admin.site.urls),
+    path("", include(django_client_framework.api.urls)),
+    path('subapp/', include(subappurls))
 ]
 
 # add_perms_shortcut(default_groups.anyone, Product, "rwcd")
