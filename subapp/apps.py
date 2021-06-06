@@ -5,7 +5,8 @@ class SubappConfig(AppConfig):
     name = 'subapp'
 
     def ready(self):
-        from .models import Product, Brand
+        pass
+        # from .models import Product, Brand
         
-        add_perms_shortcut(default_groups.anyone, Product, "rwcd")
-        add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
+        # add_perms_shortcut(default_groups.anyone, Product, "rwcd")
+        # add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
