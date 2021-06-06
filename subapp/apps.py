@@ -3,7 +3,9 @@ from django_client_framework.permissions import default_groups, add_perms_shortc
 
 class SubappConfig(AppConfig):
     name = 'subapp'
-    from .models import Product, Brand
-    
-    add_perms_shortcut(default_groups.anyone, Product, "rwcd")
-    add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
+
+    def ready(self):
+        from .models import Product, Brand
+        
+        add_perms_shortcut(default_groups.anyone, Product, "rwcd")
+        add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
