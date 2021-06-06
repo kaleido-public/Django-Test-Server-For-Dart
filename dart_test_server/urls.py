@@ -27,5 +27,3 @@ urlpatterns = [
     path('subapp/', include(subappurls))
 ]
 
-add_perms_shortcut(default_groups.anyone, Product, "rwcd")
-add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
