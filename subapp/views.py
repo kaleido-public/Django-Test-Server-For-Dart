@@ -17,6 +17,11 @@ def clear(request):
     add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
     return HttpResponse('Successfully deleted all')
 
+def add_perms(request):
+    add_perms_shortcut(default_groups.anyone, Product, "rwcd")
+    add_perms_shortcut(default_groups.anyone, Brand, "rwcd")
+    return HttpResponse('Successfully set perms')
+
 def shell(cmd, **kwargs):
     print(f"+ {cmd}", flush=True)
     return run(cmd, shell=True, text=True, check=True, **kwargs)

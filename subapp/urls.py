@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
-from subapp.views import clear
+from subapp.views import clear, add_perms
 
 urlpatterns = [
-    path('clear/', clear, name='clear')
+    path('clear/', clear, name='clear'),
+    path('add_perms/', add_perms, name='add_perms')
 ]
