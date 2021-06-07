@@ -10,12 +10,7 @@ from django.core.cache import cache
 def clear(request):
     for cmd in [
         'python3 manage.py flush --no-input',
-#         """
-# from django_client_framework.permissions import reset_permissions
-# reset_permissions()
-# """
     ]: shell(cmd)
-    # shell('python3 manage.py flush --no-input')
     cache.clear()
     reset_permissions()
     add_perms_shortcut(default_groups.anyone, Product, "rwcd")
