@@ -1,5 +1,5 @@
 from django.db import models
-      
+
 from django_client_framework.models import Serializable, AccessControlled
 from django_client_framework.serializers import ModelSerializer
 from django_client_framework.permissions import default_groups, add_perms_shortcut
@@ -44,5 +44,6 @@ class ProductSerializer(ModelSerializer):
     class Meta:
         model = Product
         exclude = []
+
 
 # Create your models here.

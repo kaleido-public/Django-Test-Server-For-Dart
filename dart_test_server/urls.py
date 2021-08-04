@@ -16,15 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import django_client_framework.api.urls
-from django_client_framework.permissions import default_groups, add_perms_shortcut
-from subapp.models import Product
-from subapp.models import Brand
 from subapp import urls as subappurls
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("subapp/", include(subappurls)),
     path("", include(django_client_framework.api.urls)),
-    path('subapp/', include(subappurls))
 ]
 
 # add_perms_shortcut(default_groups.anyone, Product, "rwcd")
