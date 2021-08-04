@@ -11,10 +11,11 @@ from django.db import transaction
 
 
 # Create your views here.
-@transaction.atomic
+# @transaction.atomic
 def clear(request):
-    Product.objects.select_for_update().delete()
-    Brand.objects.select_for_update().delete()
+    # Product.objects.select_for_update().delete()
+    # Brand.objects.select_for_update().delete()
+    shell("python3 manage.py flush --no-input")
     cache.clear()
     reset_permissions()
     add_perms_shortcut(default_groups.anyone, Product, "rwcd")
