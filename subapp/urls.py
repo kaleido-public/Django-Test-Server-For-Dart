@@ -13,10 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
-from subapp.views import clear, add_perms
+from django.urls import path
+from subapp.views import clear
 
 urlpatterns = [
-    path('clear/', clear, name='clear'),
-    path('add_perms/', add_perms, name='add_perms')
+    path("clear/", clear, name="clear"),
 ]
